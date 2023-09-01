@@ -11,15 +11,14 @@
     <P>Variabler kan tekses som en gave</P>
     <p>Gaver vi gir, vet vi hva innholder</p>
     <P>Gaver vi får, må vi pakke opp</P>
-
     <script>
         const newHeadline = "Variables Cheat Sheet"
         console.log(newHeadline)
         //Finn HTML-element med id headline, og bytt ut verdien
         document.getElementById("headline").innerHTML = newHeadline
 
-        const newStatement = "Variabler er gøy!"
-        
+        const newStatement = 10 + 12
+        document.querySelector("p").innerHTML = newStatement
     </script>
 </body>
 </html>
