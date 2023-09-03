@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Er du myndig? <span id="above 18"></span></p>
+    <p id="driver-license"></p>
+
+    <script>
+        const age = 39
+        const hasDriverLicense = true
+
+        const above18 = document.getElementById ("age")
+        const license = document.getElementById ("driver-license")
+
+        if (age > 17) {
+            above18.innerHTML = "Ja"
+        }
+
+        if (hasdriverlicense === true) {
+            license.innerHTML = "Har bilsertifikat"
+        }
+        
+        else {
+            license.innerHTML = "Har ikke bilsertifikat"
+        }
+
+    
+    </script>
+</body>
+</html>

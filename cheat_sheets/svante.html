@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svantes karakter</title>
+</head>
+<body>
+    <h1>Svantes karakter</h1>
+    <p id="resultat"></p>
+
+    <script>
+        //Først: registrere Svantes resultater på deleksamen
+        //tallene i kommentar ved siden av deleksamene viser første eksempel som gir ikke bestått
+        //...tallene som står "aktive" i koden er etter konting av deleksamene. 
+        var deleksamen1 = 79; //72
+        var deleksamen2 = 82; //28
+        var deleksamen3 = 71; //57
+        var deleksamen4 = 84; //66
+
+        //vi oppretter en teller = 0, for å kunne telle antall eksamer
+        var antalleksamenerbestaatt = 0;
+
+        //så må vi sjekke hver deleksamen, om den er bestått
+        // kan også skrive >39, men velger å skrive >=40 fordi det er et gjenkjennelig tall opp mot oppgaveteksten.
+        // TIPS TIL EKSAMEN: kommenter at man forutsetter at det kun gis hele poeng, ettersom om man hadde skrevet >39 er bestått, 
+        //...og Svante hadde fått 39,5 poeng hadde den blitt merkert som bestått, men kravet til å bestå er 40 poeng. 
+        if(deleksamen1 >= 40) {
+                antalleksamenerbestaatt++;
+                //kan også skrives antalleksamenerbestaatt = antalleksamenerbestaatt + 1;
+        }
+
+        if(deleksamen2 >= 40) {
+                antalleksamenerbestaatt++;
+        }
+
+        if(deleksamen3 >= 40) {
+                antalleksamenerbestaatt++;
+        }
+        if(deleksamen4 >= 40) {
+                antalleksamenerbestaatt++;
+        }
+        
+        //Vi sjekker om alle deleksamner er bestått
+        if(antalleksamenerbestaatt ===4) {
+
+            //Regne ut karakter
+            var sumdeleksamner = deleksamen1 + deleksamen2 + deleksamen3 + deleksamen4;
+            //Lager en tom variabel som skal inneholde karakter:
+            var karakter;
+            
+            if(sumdeleksamner >= 360) {
+                karakter = "A";
+            } else if(sumdeleksamner >= 320) {
+                karakter = "B";
+            } else if(sumdeleksamner >= 240) {
+                karakter = "C";
+            } else if(sumdeleksamner >= 200) {
+                karakter = "D";
+            }else if(sumdeleksamner >=160) {
+                karakter = "E";
+            }else {
+                karakter = "F";
+            }
+
+            //Skrive ut resultatet av kurset:
+            document.getElementById("resultat").innerHTML = "Svante har bestått kurset med karakter " + karakter;
+
+    }//Avslutter if-test om alleeksamenerbestaatt
+        else {
+           document.getElementById("resultat").innerHTML = "Svante har ikke bestått alle deleksamene, og derfor ikke bestått kurset";
+        }
+
+        
+
+
+    </script>
+</body>
+</html>
