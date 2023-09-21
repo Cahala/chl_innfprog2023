@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Konkatinering cheat sheet</title>
+</head>
+<body>
+  <p id="mailStandard"></p>
+  <p id ="mailTempLit"></p>
+  <script>
+    //Legge til mail
+    const name = "Camilla H. Larsen"
+    const mail = "camilhl@hiof.no"
+
+      //Standrar konkatinering med plusstegn
+    const mailCodeStandard = "<a href='mailto:" + mail + "''>Send mail til " + name +"</a>"
+    document.getElementById ("mailStandard").innerHTML = mailCodeStandard
+
+    //Template literals
+    const mailCodeTempLit = `<a href="mailto: ${mail}">Send epost til ${name}</a>`
+    document.getElementById ("mailTempLit").innerHTML = mailCodeTempLit
+   </script>
+</body>
+</html>
+

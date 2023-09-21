@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorter dyr</title>
+</head>
+<body>
+    <p id ="utskrift"></p>
+ 
+    <script>
+        const dyr = [" Løve ", " Elefant"," Mus"," Hund"," Katt"," Fisk"," Tiger"," Sjiraff"," Sebra"," Ape"]
+        dyr.push(" Fugl")
+        dyr.sort()
+
+       const antalldyr = dyr.length
+
+       const setningToString = `Antall dyr: ${antalldyr}. ${dyr}`
+
+
+        document.getElementById("utskrift").innerHTML = setningToString
+
+    </script>
+</body>
+</html>

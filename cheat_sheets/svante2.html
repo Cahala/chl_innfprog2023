@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVantes karakter gjennom array og løkker</title>
+</head>
+<body>
+    <p id="utskrift"></p>
+    <script>
+//Først: gjøre klar noen variabler vi trenger i programmet vårt:
+//Svantes poeng på deleksamene
+
+var poeng = [79, 82, 71, 84]; //poeng[0], var index = 0; poeng [index]
+//Teller for antall deleksamener bestått
+var antallBestaatt = 0;
+//Teller for totalt antall poeng
+var totalePoeng = 0;
+
+//Vi skal lage en løkke som går igjennom hver enkelt verdi i array poeng
+//For hver runde løkken går må vi; 
+// - sjekke om deleksamen er bestått (poeng må være like eller høyere enn 40)
+// - hvis deleksamen er bestått skal telleren antallbestaatt plusses på med 1
+// - plusse poengene (verdien fra arrayen) på totalPoeng 
+for(var index = 0; index < poeng.length; index++) { //løkka skal kjøre så langt det antallet elementer som i arrayen,
+    if(poeng[index] >= 40) {
+        antallBestaatt++;
+    } 
+    totalePoeng = totalePoeng + poeng[index];
+    
+    console.log("Løkken kjører nå runde nr " + index + ". Så langt er " + antallBestaatt + " deleksamener bestått."  )
+    console.log("Så langt er totalt antall poeng " + totalePoeng);
+    
+}
+
+//Nå skal vi lage en datastruktur for karakterskala:
+
+var karakterSkala = [
+    {karakter: "A", maxscore: 400, minscore: 361},
+    {karakter: "B", maxscore: 360, minscore: 321},  
+    {karakter: "C", maxscore: 320, minscore: 241}, 
+    {karakter: "D", maxscore: 240, minscore: 201}, 
+    {karakter: "E", maxscore: 200, minscore: 160},
+    {karakter: "F", maxscore: 159, minscore: 0}
+];
+
+//Eksempel på referanse: karakterSkala[2]["karakter"] --> "C"
+//Eksempel på referanse med variabel istedenfor index: var index = 1; karakterSkala[index]["karakter"] --> "8"
+
+//Deklarer en variabel som kan ta i mot Svantes karakter:
+var karakter; 
+
+//Nå sjekker vi om Svante har bestått alle deleksamene, hvis han har det skal vi finne karakter, hvis ikke skal karakter bli F kurset ikke bestått
+if(antallBestaatt == poeng.length) {
+   //Vi skal lage en løkke som går igjennom hver karakter i karakterSkala 
+    //For hver karakter må vi sjekke om Svantes poengsum er mellom maxscore og minscore
+    for(var ki = 0; ki < karakterSkala.length; ki++) {
+        if(totalePoeng <= karakterSkala[ki]["maxscore"] && totalePoeng >= karakterSkala[ki]["minscore"]) {
+        karakter = karakterSkala[ki]["karakter"];
+        break; 
+
+        } 
+    }
+} else {
+    //Hvis ikke alle alle deleksamene er bestått, settes karakteren til F uavhengig av poengsum
+    karakter = "F";
+}
+document.getElementById("utskrift").innerHTML = "Karakter: " + karakter
+    </script>
+</body>
+</html>
