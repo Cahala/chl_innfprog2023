@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <style>
+        .red {color: red;}
+    </style>
+</head>
+<body>
+    <ul id="result"></ul>
+    <!-- <li>10 + 5 = 15</li> -->
+    <!-- <li>10 - 5 = 5</li> -->
+    <!-- <li>10 / 5 = 2</li>-->
+    <!-- <li>10 * % = 50</li> -->
+
+    <script>
+        function calculator(num1 = 0, num2 = 0){
+        
+        //Utregning +, -, /, *
+            const pluss = num1 + num2
+            const minus = num1 - num2
+            const dele = num1 / num2
+            const gange = num1 * num2
+           
+        //Skrive ut regnestykket til listen med id resultat
+            document.getElementById("result").innerHTML = 
+            `<li ${pluss < 0 ? "class='red'" : null}>${num1} + ${num2} = ${pluss}</li>
+             <li ${minus < 0 ? "class='red'" : null}>${num1} - ${num2} = ${minus}</li>
+             <li ${dele < 0 ? "class='red'" : null}>${num1} / ${num2} = ${dele}</li>
+             <li ${gange < 0 ? "class='red'" : null}>${num1} * ${num2} = ${gange}</li>`
+
+        }
+   
+        calculator(0, 3)
+    </script>
+</body>
+</html>
